@@ -2,6 +2,11 @@ import torch
 import os
 import yaml
 
+def load_config_data(config_path='./configs/v1-inference.yaml')
+    with open(config_path, 'r') as f:
+        config_data = yaml.safe_load(f)
+    return config_data
+
 def get_unique_prefixes(state_dict):
     return set(key.split('.'))[0] for key in state_dict.keys())
 
